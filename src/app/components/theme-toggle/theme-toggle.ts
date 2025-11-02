@@ -33,27 +33,18 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   `,
   styles: [`
     .theme-toggle {
-      position: fixed;
-      top: 90px;
-      right: 30px;
-      z-index: 998;
       background: var(--card-bg);
       border: 2px solid var(--border-color);
       border-radius: 50px;
       padding: 4px;
       cursor: pointer;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-sm);
       transition: var(--transition);
 
       &:hover {
         transform: scale(1.05);
-        box-shadow: var(--shadow-lg);
+        box-shadow: var(--shadow-md);
         border-color: var(--primary-color);
-      }
-
-      @media (max-width: 768px) {
-        top: 70px;
-        right: 20px;
       }
     }
 

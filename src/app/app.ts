@@ -3,7 +3,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header';
 import { LoaderComponent } from './components/loader/loader';
-import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle';
 import { HeroComponent } from './components/hero/hero';
 import { AboutComponent } from './components/about/about';
 import { StatsCounterComponent } from './components/stats-counter/stats-counter';
@@ -25,7 +24,6 @@ import { BackToTopComponent } from './components/back-to-top/back-to-top';
   imports: [
     RouterOutlet,
     LoaderComponent,
-    ThemeToggleComponent,
     HeaderComponent,
     HeroComponent,
     AboutComponent,

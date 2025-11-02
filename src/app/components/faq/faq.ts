@@ -226,7 +226,7 @@ export class FaqComponent {
     {
       question: 'What services do you offer?',
       answer: 'I offer full-stack web development, mobile app development, UI/UX design, cloud solutions, security audits, and technical consulting. I can help with everything from initial planning to deployment and maintenance.',
-      isOpen: false
+      isOpen: true
     },
     {
       question: 'What is your typical project timeline?',

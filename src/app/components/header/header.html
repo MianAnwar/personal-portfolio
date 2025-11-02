@@ -21,16 +21,21 @@
           </li>
         </ul>
 
-        <!-- Mobile Menu Toggle -->
-        <button
-          class="mobile-menu-toggle"
-          (click)="toggleMobileMenu()"
-          [class.active]="isMobileMenuOpen"
-          aria-label="Toggle menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
+        <!-- Theme Toggle & Mobile Menu Toggle -->
+        <div class="header-actions">
+          <app-theme-toggle></app-theme-toggle>
+
+          <!-- Mobile Menu Toggle -->
+          <button
+            class="mobile-menu-toggle"
+            (click)="toggleMobileMenu()"
+            [class.active]="isMobileMenuOpen"
+            aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
       </div>
 
       <!-- Mobile Navigation -->
