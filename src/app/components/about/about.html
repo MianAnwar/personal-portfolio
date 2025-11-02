@@ -1,9 +1,9 @@
 <section id="about" class="about">
   <div class="container">
-    <h2 class="section-title">About Me</h2>
+    <h2 class="section-title" data-aos="fade-up">About Me</h2>
 
     <div class="about-content">
-      <div class="about-image">
+      <div class="about-image" data-aos="fade-right" data-aos-delay="200">
         <div class="image-frame">
           <div class="image-placeholder">
             <img src="images/profile.jpg" alt="Mian Muhammad Anwar">
@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <div class="about-text">
+      <div class="about-text" data-aos="fade-left" data-aos-delay="300">
         <h3>Hi, I'm Mian Muhammad Anwar</h3>
         <p class="intro">
           I'm a passionate <strong>Full Stack Developer</strong> with expertise in building
@@ -30,7 +30,9 @@
         <div class="highlights">
           <h4>What I Do:</h4>
           <ul class="highlights-list">
-            <li *ngFor="let highlight of highlights">
+            <li *ngFor="let highlight of highlights; let i = index"
+                [attr.data-aos]="'fade-up'"
+                [attr.data-aos-delay]="400 + (i * 100)">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
@@ -39,7 +41,7 @@
           </ul>
         </div>
 
-        <div class="about-cta">
+        <div class="about-cta" data-aos="fade-up" data-aos-delay="800">
           <a href="#contact" class="btn">Let's Work Together</a>
           <a href="documents/resume.pdf" download class="btn btn-outline">Download CV</a>
         </div>
@@ -47,7 +49,10 @@
     </div>
 
     <div class="stats-grid">
-      <div *ngFor="let stat of stats" class="stat-card">
+      <div *ngFor="let stat of stats; let i = index"
+           class="stat-card"
+           [attr.data-aos]="'zoom-in'"
+           [attr.data-aos-delay]="200 + (i * 100)">
         <div class="stat-value">{{ stat.value }}</div>
         <div class="stat-label">{{ stat.label }}</div>
       </div>

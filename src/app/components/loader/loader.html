@@ -1,0 +1,27 @@
+<div class="loader-container" [class.fade-out]="!isLoading()">
+  <div class="loader-content">
+    <div class="logo-animation">
+      <div class="logo-circle">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" class="circle-bg"/>
+          <circle cx="50" cy="50" r="45" class="circle-progress"/>
+        </svg>
+        <div class="logo-text">MA</div>
+      </div>
+    </div>
+    <div class="loading-text">
+      <span class="letter">L</span>
+      <span class="letter">o</span>
+      <span class="letter">a</span>
+      <span class="letter">d</span>
+      <span class="letter">i</span>
+      <span class="letter">n</span>
+      <span class="letter">g</span>
+      <span class="dots">
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+      </span>
+    </div>
+  </div>
+</div>

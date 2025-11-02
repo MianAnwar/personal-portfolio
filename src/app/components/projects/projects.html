@@ -1,12 +1,12 @@
 <section id="projects" class="projects">
   <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
+    <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
 
-    <p class="projects-intro">
+    <p class="projects-intro" data-aos="fade-up" data-aos-delay="100">
       Here are some of my recent projects that showcase my skills and experience in web development.
     </p>
 
-    <div class="filter-buttons">
+    <div class="filter-buttons" data-aos="fade-up" data-aos-delay="200">
       <button
         *ngFor="let category of categories"
         class="filter-btn"
@@ -17,7 +17,11 @@
     </div>
 
     <div class="projects-grid">
-      <div *ngFor="let project of filteredProjects" class="project-card card">
+      <div *ngFor="let project of filteredProjects; let i = index"
+           #projectCard
+           class="project-card card"
+           [attr.data-aos]="'fade-up'"
+           [attr.data-aos-delay]="300 + (i * 100)">
         <div class="project-image">
           <img [src]="project.image" [alt]="project.title" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
           <div class="project-overlay">
