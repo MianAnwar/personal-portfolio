@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,8 +8,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./hero.scss']
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  private cdr = inject(ChangeDetectorRef);
-
   titles: string[] = [
     'Full Stack Developer',
     'Angular Expert',
@@ -17,7 +15,7 @@ export class HeroComponent implements OnInit, OnDestroy {
     'Problem Solver'
   ];
   currentTitleIndex = 0;
-  currentTitle = '';
+  currentTitle = signal('');
   isDeleting = false;
   private typingTimeout: any;
 
@@ -33,21 +31,20 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   typeTitle() {
     const fullTitle = this.titles[this.currentTitleIndex];
+    const current = this.currentTitle();
 
     if (!this.isDeleting) {
-      this.currentTitle = fullTitle.substring(0, this.currentTitle.length + 1);
-      this.cdr.detectChanges(); // Explicitly trigger change detection
+      this.currentTitle.set(fullTitle.substring(0, current.length + 1));
 
-      if (this.currentTitle === fullTitle) {
+      if (this.currentTitle() === fullTitle) {
         this.isDeleting = true;
         this.typingTimeout = setTimeout(() => this.typeTitle(), 2000);
         return;
       }
     } else {
-      this.currentTitle = fullTitle.substring(0, this.currentTitle.length - 1);
-      this.cdr.detectChanges(); // Explicitly trigger change detection
+      this.currentTitle.set(fullTitle.substring(0, current.length - 1));
 
-      if (this.currentTitle === '') {
+      if (this.currentTitle() === '') {
         this.isDeleting = false;
         this.currentTitleIndex = (this.currentTitleIndex + 1) % this.titles.length;
       }
