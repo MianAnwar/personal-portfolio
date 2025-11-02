@@ -1,52 +1,68 @@
 .projects {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  background: var(--bg-secondary);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  }
 }
 
 .projects-intro {
   text-align: center;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  color: var(--text-color);
-  opacity: 0.85;
-  line-height: 1.8;
+  font-size: 1.15rem;
+  max-width: 750px;
+  margin: 0 auto 50px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  animation: fadeIn 0.8s ease-out;
 }
 
 .filter-buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
+  gap: 1.25rem;
+  margin-bottom: 4rem;
   flex-wrap: wrap;
 }
 
 .filter-btn {
-  padding: 0.6rem 1.5rem;
+  padding: 0.75rem 2rem;
   background: var(--card-bg);
-  border: 2px solid transparent;
-  border-radius: 25px;
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-color);
   cursor: pointer;
   transition: var(--transition);
+  box-shadow: var(--shadow-sm);
 
   &:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
   }
 
   &.active {
-    background: var(--primary-color);
+    background: var(--gradient-primary);
     color: white;
-    border-color: var(--primary-color);
+    border-color: transparent;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
   }
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2.5rem;
 
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
@@ -58,10 +74,11 @@
   padding: 0;
   cursor: pointer;
   transition: var(--transition);
+  border-radius: 20px;
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-lg);
 
     .project-overlay {
       opacity: 1;
@@ -72,18 +89,19 @@
 .project-image {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 280px;
   overflow: hidden;
+  border-radius: 20px 20px 0 0;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &:hover img {
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(2deg);
   }
 }
 
@@ -93,7 +111,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(102, 126, 234, 0.95);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.97) 0%, rgba(118, 75, 162, 0.97) 100%);
   display: flex;
   align-items: center;
   justify-content: center;

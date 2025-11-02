@@ -11,7 +11,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   titles: string[] = [
     'Full Stack Developer',
     'Angular Expert',
-    'UI/UX Enthusiast',
+    '.Net Developer',
     'Problem Solver'
   ];
   currentTitleIndex = 0;
