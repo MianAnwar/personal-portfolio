@@ -17,6 +17,7 @@ export class HeaderComponent {
     { label: 'About', path: '#about' },
     { label: 'Skills', path: '#skills' },
     { label: 'Experience', path: '#experience' },
+    { label: 'Services', path: '#services' },
     { label: 'Projects', path: '#projects' },
     { label: 'Contact', path: '#contact' }
   ];

@@ -1,0 +1,43 @@
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Services</h2>
+      <p>What I can do for you</p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <div class="service-card"
+             [attr.data-aos]="$index % 2 === 0 ? 'fade-right' : 'fade-left'"
+             [attr.data-aos-delay]="$index * 100">
+          <div class="service-icon">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+          <p class="service-description">{{ service.description }}</p>
+
+          <ul class="service-features">
+            @for (feature of service.features; track feature) {
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                {{ feature }}
+              </li>
+            }
+          </ul>
+
+          @if (service.price) {
+            <div class="service-price">{{ service.price }}</div>
+          }
+
+          <button class="btn-outline">Get Started</button>
+        </div>
+      }
+    </div>
+
+    <div class="cta-box" data-aos="zoom-in" data-aos-delay="400">
+      <h3>Need a custom solution?</h3>
+      <p>Let's discuss your project requirements and create a tailored plan for you</p>
+      <a href="#contact" class="btn-primary">Contact Me</a>
+    </div>
+  </div>
+</section>

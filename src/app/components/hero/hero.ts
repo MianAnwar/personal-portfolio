@@ -61,9 +61,10 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   downloadResume() {
-    // This will download the resume from assets folder
+    // This will download the resume from public/documents folder
+    // Note: User needs to place their actual resume.pdf in public/documents/
     const link = document.createElement('a');
-    link.href = 'assets/documents/resume.pdf';
+    link.href = '/documents/resume.pdf';
     link.download = 'Mian_Muhammad_Anwar_Resume.pdf';
     link.click();
   }
