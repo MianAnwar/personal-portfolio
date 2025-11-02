@@ -1,0 +1,58 @@
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-content">
+      <div class="about-image">
+        <div class="image-frame">
+          <div class="image-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <h3>Hi, I'm Mian Muhammad Anwar</h3>
+        <p class="intro">
+          I'm a passionate <strong>Full Stack Developer</strong> with expertise in building
+          scalable web applications and creating exceptional user experiences. With a strong
+          foundation in both frontend and backend technologies, I specialize in developing
+          modern, responsive, and performant applications.
+        </p>
+
+        <p>
+          My journey in web development started over 5 years ago, and since then, I've had
+          the opportunity to work on diverse projects ranging from e-commerce platforms to
+          enterprise applications. I'm constantly learning and adapting to new technologies
+          to stay at the forefront of web development.
+        </p>
+
+        <div class="highlights">
+          <h4>What I Do:</h4>
+          <ul class="highlights-list">
+            <li *ngFor="let highlight of highlights">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              {{ highlight }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-cta">
+          <a href="#contact" class="btn">Let's Work Together</a>
+          <a href="assets/documents/resume.pdf" download class="btn btn-outline">Download CV</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div *ngFor="let stat of stats" class="stat-card">
+        <div class="stat-value">{{ stat.value }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
+      </div>
+    </div>
+  </div>
+</section>
