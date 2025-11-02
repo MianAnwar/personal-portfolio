@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,7 +7,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './hero.html',
   styleUrls: ['./hero.scss']
 })
-export class HeroComponent implements OnInit {
+export class HeroComponent implements OnInit, OnDestroy {
+  private cdr = inject(ChangeDetectorRef);
+
   titles: string[] = [
     'Full Stack Developer',
     'Angular Expert',
@@ -17,10 +19,16 @@ export class HeroComponent implements OnInit {
   currentTitleIndex = 0;
   currentTitle = '';
   isDeleting = false;
-  typingSpeed = 100;
+  private typingTimeout: any;
 
   ngOnInit() {
-    this.typeTitle();
+    setTimeout(() => this.typeTitle(), 500);
+  }
+
+  ngOnDestroy() {
+    if (this.typingTimeout) {
+      clearTimeout(this.typingTimeout);
+    }
   }
 
   typeTitle() {
@@ -28,16 +36,16 @@ export class HeroComponent implements OnInit {
 
     if (!this.isDeleting) {
       this.currentTitle = fullTitle.substring(0, this.currentTitle.length + 1);
+      this.cdr.detectChanges(); // Explicitly trigger change detection
 
       if (this.currentTitle === fullTitle) {
-        setTimeout(() => {
-          this.isDeleting = true;
-          this.typeTitle();
-        }, 2000);
+        this.isDeleting = true;
+        this.typingTimeout = setTimeout(() => this.typeTitle(), 2000);
         return;
       }
     } else {
       this.currentTitle = fullTitle.substring(0, this.currentTitle.length - 1);
+      this.cdr.detectChanges(); // Explicitly trigger change detection
 
       if (this.currentTitle === '') {
         this.isDeleting = false;
@@ -45,8 +53,7 @@ export class HeroComponent implements OnInit {
       }
     }
 
-    const speed = this.isDeleting ? 50 : this.typingSpeed;
-    setTimeout(() => this.typeTitle(), speed);
+    this.typingTimeout = setTimeout(() => this.typeTitle(), 100);
   }
 
   scrollToSection(sectionId: string) {
