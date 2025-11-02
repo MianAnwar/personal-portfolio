@@ -2,6 +2,12 @@
 
 A modern, feature-rich personal portfolio application built with Angular 20 and cutting-edge web technologies. This portfolio showcases your experience, skills, projects, and professional achievements with stunning animations and interactive elements.
 
+## 📚 Documentation
+
+- **[Setup & Customization Guide](./SETUP_GUIDE.md)** - Complete guide for personalizing your portfolio
+- **[Deployment Guide](./DEPLOYMENT.md)** - Instructions for deploying to various platforms
+- **[Project Details](./PROJECT_README.md)** - Additional project information and notes
+
 ## ✨ Features
 
 ### Core Sections
