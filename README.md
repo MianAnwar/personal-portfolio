@@ -8,6 +8,22 @@ A modern, feature-rich personal portfolio application built with Angular 20 and 
 - **[Deployment Guide](./DEPLOYMENT.md)** - Instructions for deploying to various platforms
 - **[Project Details](./PROJECT_README.md)** - Additional project information and notes
 
+## 📸 Screenshots
+
+### Dark Mode
+![Portfolio Dark Mode - Hero Section](https://github.com/MianAnwar/personal-portfolio/blob/main/screenshots/dark-home-page.png?raw=true)
+*Hero section with animated typing effect and dark theme*
+
+![Portfolio Dark Mode - Full Page](https://github.com/MianAnwar/personal-portfolio/blob/main/screenshots/dark-full-part1.png?raw=true)
+*Complete portfolio overview in dark mode*
+
+### Light Mode
+![Portfolio Light Mode - Hero Section](https://github.com/MianAnwar/personal-portfolio/blob/main/screenshots/light-home-page.png?raw=true)
+*Hero section with light theme*
+
+![Portfolio Light Mode - Full Page](https://github.com/MianAnwar/personal-portfolio/blob/main/screenshots/light-full-part1.png?raw=true)
+*Complete portfolio overview in light mode*
+
 ## ✨ Features
 
 ### Core Sections
