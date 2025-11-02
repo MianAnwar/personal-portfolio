@@ -1,1 +1,66 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-logo">&lt;MA /&gt;</h3>
+        <p class="footer-description">
+          Full Stack Developer passionate about creating beautiful and functional web experiences.
+        </p>
+        <div class="social-links">
+          <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" [title]="link.name" class="social-link">
+            <span>{{ link.name }}</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home" (click)="scrollToSection('#home')">Home</a></li>
+          <li><a href="#about" (click)="scrollToSection('#about')">About</a></li>
+          <li><a href="#skills" (click)="scrollToSection('#skills')">Skills</a></li>
+          <li><a href="#experience" (click)="scrollToSection('#experience')">Experience</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Projects</h4>
+        <ul class="footer-links">
+          <li><a href="#projects" (click)="scrollToSection('#projects')">Portfolio</a></li>
+          <li><a href="#projects" (click)="scrollToSection('#projects')">Featured Work</a></li>
+          <li><a href="#contact" (click)="scrollToSection('#contact')">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:your.email@example.com">your.email@example.com</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>City, Country</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} Mian Muhammad Anwar. All rights reserved.</p>
+      <button class="scroll-top" (click)="scrollToTop()" title="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+</footer>

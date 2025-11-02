@@ -1,1 +1,91 @@
-<p>experience works!</p>
+<section id="experience" class="experience">
+  <div class="container">
+    <h2 class="section-title">Experience & Education</h2>
+
+    <div class="experience-grid">
+      <!-- Work Experience -->
+      <div class="experience-section">
+        <h3 class="subsection-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          Work Experience
+        </h3>
+
+        <div class="timeline">
+          <div *ngFor="let exp of experiences; let i = index" class="timeline-item" [class.left]="i % 2 === 0" [class.right]="i % 2 !== 0">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <div class="timeline-header">
+                <h4>{{ exp.title }}</h4>
+                <span class="company">{{ exp.company }}</span>
+                <div class="meta-info">
+                  <span class="location">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    {{ exp.location }}
+                  </span>
+                  <span class="duration">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    {{ exp.startDate }} - {{ exp.endDate }}
+                  </span>
+                </div>
+              </div>
+              <p class="description">{{ exp.description }}</p>
+              <ul class="responsibilities">
+                <li *ngFor="let resp of exp.responsibilities">{{ resp }}</li>
+              </ul>
+              <div class="technologies">
+                <span *ngFor="let tech of exp.technologies" class="tech-badge">{{ tech }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="experience-section">
+        <h3 class="subsection-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          Education
+        </h3>
+
+        <div class="education-list">
+          <div *ngFor="let edu of education" class="education-card card">
+            <div class="education-header">
+              <h4>{{ edu.degree }}</h4>
+              <span class="institution">{{ edu.institution }}</span>
+              <div class="meta-info">
+                <span class="location">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  {{ edu.location }}
+                </span>
+                <span class="duration">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  {{ edu.startDate }} - {{ edu.endDate }}
+                </span>
+              </div>
+              <p *ngIf="edu.gpa" class="gpa">GPA: {{ edu.gpa }}</p>
+            </div>
+            <p *ngIf="edu.description" class="description">{{ edu.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
