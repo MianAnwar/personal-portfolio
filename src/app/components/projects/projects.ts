@@ -60,6 +60,14 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     }
   }
 
+  onImageError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    // Set a data URL for a simple gray placeholder SVG
+    img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"%3E%3Crect width="400" height="300" fill="%23f3f4f6"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="%239ca3af"%3EProject Image%3C/text%3E%3C/svg%3E';
+    // Prevent infinite loop
+    img.onerror = null;
+  }
+
   ngOnDestroy() {
     // Cleanup tilt instances
     if (isPlatformBrowser(this.platformId)) {
